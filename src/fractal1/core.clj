@@ -11,9 +11,9 @@
     (loop [z (Complex. 0 0 )
            cnt 0]
       (if (> (.abs z) 2)
-        1
+        " "
         (if (> cnt LIMIT)
-          0
+          "#"
           (recur (.add (.multiply z z) c) (inc  cnt)))))
     )
   )
@@ -27,7 +27,7 @@
         end-i 1
         start-i -1
         r (+ start-real (* x (/ 1.0 xres) (- end-real start-real)) )
-        i (+ start-i (* x (/ 1.0 yres) (- end-i start-i)) )]
+        i (+ start-i (* y (/ 1.0 yres) (- end-i start-i)) )]
     (in-m-set r i)
     )
   )
@@ -37,4 +37,13 @@
   "I don't do a whole lot ... yet.."
   [& args]
   (println  (mf 100 0  100 100))
-  (println  (mf 50 50  100 100)))
+  (println  (mf 50 50  100 100))
+
+  (let [xres 100
+        yres 40]
+    (doseq [
+            y (range yres)]
+      (println (clojure.string/join (map #(mf % y xres yres) (range xres)))
+               )
+      ))
+  )
