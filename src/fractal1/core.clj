@@ -11,9 +11,9 @@
     (loop [z (Complex. 0 0 )
            cnt 0]
       (if (> (.abs z) 2)
-        0
+        cnt
         (if (> cnt LIMIT)
-          cnt
+          LIMIT
           (recur (.add (.multiply z z) c) (inc  cnt)))))
     )
   )
@@ -79,13 +79,13 @@
   [& args]
 
 
-  (let [xres 100
-        yres 40]
+  (let [xres 420
+        yres 140]
     (doseq [y (range yres)]
       (println  (clojure.string/join  (map #(char-for-val (mf % y xres yres) 0 LIMIT (standard-chars)) (range xres))))))
 
 
-  (let [xres 100
+  #_(let [xres 100
         yres 40]
     (doseq [y (range yres)]
       (println  (clojure.string/join  (map #(grey-scale (mf % y xres yres)) (range xres))))))
