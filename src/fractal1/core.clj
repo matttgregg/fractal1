@@ -39,10 +39,6 @@
     (nth chars (int (* (- (count chars) 1)
                            (/ n LIMIT))))))
 
-(grey-scale 20)
-
-
-
 (defn get-points [from to res]
   (let [delta (/ (- to from) res)]
     (map (fn [i] (+ from (* i delta))) (range (+ res 1)))))
@@ -77,7 +73,6 @@
 (defn -main
   "I don't do a whole lot ... yet.."
   [& args]
-
 
   (let [xres 420
         yres 140]
