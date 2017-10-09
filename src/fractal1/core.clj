@@ -34,7 +34,7 @@
 
 
 (defn -main
-  "I don't do a whole lot ... yet."
+  "I don't do a whole lot ... yet.."
   [& args]
   (println  (mf 100 0  100 100))
   (println  (mf 50 50  100 100)))
