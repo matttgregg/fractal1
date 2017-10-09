@@ -11,9 +11,9 @@
     (loop [z (Complex. 0 0 )
            cnt 0]
       (if (> (.abs z) 2)
-        " "
+        0
         (if (> cnt LIMIT)
-          "#"
+          cnt
           (recur (.add (.multiply z z) c) (inc  cnt)))))
     )
   )
@@ -33,13 +33,19 @@
   )
 
 
+(defn grey-scale
+  [n]
+  (let [chars "123456789"]
+    (nth chars (int (* (count chars)
+                           (/ n LIMIT))))))
+
+(grey-scale 20)
+
 (defn -main
   "I don't do a whole lot ... yet.."
   [& args]
-  (println  (mf 100 0  100 100))
-  (println  (mf 50 50  100 100))
 
   (let [xres 100
         yres 40]
     (doseq [y (range yres)]
-      (println (clojure.string/join (map #(mf % y xres yres) (range xres)))))))
+      (println (grey-scale (clojure.string/join (map #(mf % y xres yres) (range xres))))))))
