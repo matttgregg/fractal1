@@ -48,4 +48,4 @@
   (let [xres 100
         yres 40]
     (doseq [y (range yres)]
-      (println (grey-scale (clojure.string/join (map #(mf % y xres yres) (range xres))))))))
+      (println  (clojure.string/join ( (map #(grey-scale (mf % y xres yres)) (range xres))))))))
