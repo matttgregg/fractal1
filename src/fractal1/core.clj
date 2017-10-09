@@ -20,7 +20,7 @@
 
 
 (defn mf
-  "returns int in range 0 255"
+  "returns an indicator of being in or out of the set"
   [x y xres yres]
   (let [start-real -2
         end-real 1
@@ -41,9 +41,5 @@
 
   (let [xres 100
         yres 40]
-    (doseq [
-            y (range yres)]
-      (println (clojure.string/join (map #(mf % y xres yres) (range xres)))
-               )
-      ))
-  )
+    (doseq [y (range yres)]
+      (println (clojure.string/join (map #(mf % y xres yres) (range xres)))))))
