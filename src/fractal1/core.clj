@@ -77,7 +77,7 @@
   (let [xres 420
         yres 140]
     (doseq [y (range yres)]
-      (println  (clojure.string/join  (map #(char-for-val (mf % y xres yres) 0 LIMIT (standard-chars)) (range xres))))))
+      (println   (clojure.string/join  (map #(char-for-val (mf % y xres yres) 0 LIMIT (standard-chars)) (range xres))))))
 
 
   #_(let [xres 100
