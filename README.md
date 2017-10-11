@@ -9,15 +9,17 @@ Download from https://github.com/matttgregg/fractal1.
 
 ## Usage
 
-   mandelbrot <x-resolution> <y-resolution> <interation-limit>
-    -- Prints mandelbrot set.
-   julia <x-resolution> <y-resolution> <interation-limit> <c-real> <c-imaginary>
-    -- Prints a Julia set, derived from complex number c
-   julia-rotate <x-resolution> <y-resolution> <interation-limit> <angle>
-    -- Prints a Julia set, derived from angle (fixed weight 0.7885)
-   julia-stepper <x-resolution> <y-resolution> <interation-limit> <angle-step> <weight>
-    -- Continuously prints Julia sets, derived from angle and weight, increasing angle by step each iteration.
-  Note that all parameters are floats, except for iteration limit which should be an integer.\n) 
+* mandelbrot <x-resolution> <y-resolution> <interation-limit>
+  * Prints mandelbrot set.
+* julia <x-resolution> <y-resolution> <interation-limit> <c-real> <c-imaginary>
+  * Prints a Julia set, derived from complex number c
+* julia-rotate <x-resolution> <y-resolution> <interation-limit> <angle>
+  * Prints a Julia set, derived from angle (fixed weight 0.7885)
+* julia-stepper <x-resolution> <y-resolution> <interation-limit> <angle-step> <weight>
+  * Continuously prints Julia sets, derived from angle and weight, increasing angle by step each iteration.
+
+
+__Note__ that all parameters are floats, except for iteration limit which should be an integer.\n) 
 
 ## Options
 
